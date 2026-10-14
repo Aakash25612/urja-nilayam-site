@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Urja Nilayam</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Urja Nilayam, a three-bedroom private pool villa in Karjat, Maharashtra. Sleeps ten. ₹12,000 a night for the whole house.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Hanken+Grotesk:wght@400;500;600&family=Tiro+Devanagari+Marathi&display=swap">
+<style>
+/* Layout: the house is read through its own window wall. Spaces sit in a framed pane grid (white mullions),
+   everything else is a quiet single column with a left-aligned rhythm. */
+:root{
+  --paper:#F2EADD;      /* cream, the walls */
+  --sand:#E3D6C2;       /* beige, the band behind the window wall */
+  --linen:#FBF7F0;      /* window-frame white */
+  --frame:#FBF7F0;      /* mullions */
+  --char:#2C2926;       /* charcoal, text and steel */
+  --ash:#6F665D;        /* muted text */
+  --line:#D3C4AE;       /* hairlines */
+  --teak:#86532F;       /* floorboards and stair treads, the one accent */
+  --glass:#2C98B6;      /* stairwell glass, only inside the pattern */
+  --on-teak:#FBF7F0;
+  --shade:rgba(44,41,38,.55);
+  --display:"Young Serif", Georgia, "Times New Roman", serif;
+  --body:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --deva:"Tiro Devanagari Marathi", "Noto Serif Devanagari", serif;
+  --gutter-l:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1D1B19; --sand:#272320; --linen:#2A2622; --frame:#4A433C; --char:#EEE5D7; --ash:#ADA295;
+    --line:#3B3631; --teak:#CF9A70; --glass:#5BB8D1; --on-teak:#1D1B19; --shade:rgba(0,0,0,.6); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1D1B19; --sand:#272320; --linen:#2A2622; --frame:#4A433C; --char:#EEE5D7; --ash:#ADA295;
+  --line:#3B3631; --teak:#CF9A70; --glass:#5BB8D1; --on-teak:#1D1B19; --shade:rgba(0,0,0,.6); color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+body{background:var(--paper);color:var(--char);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--teak);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+.lede{color:var(--ash);max-width:58ch}
+.num{font-variant-numeric:tabular-nums}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:28px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:34px;height:24px;color:var(--teak);flex:none}
+.brand b{font-family:var(--display);font-weight:400;font-size:21px;letter-spacing:.01em;display:block;line-height:1}
+.brand small{font-family:var(--deva);font-size:13px;color:var(--ash);display:block;line-height:1.3;margin-top:3px}
+.nav{display:flex;gap:24px;margin-left:auto;font-size:15px}
+.nav a{text-decoration:none;color:var(--ash)}
+.nav a:hover{color:var(--char)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;background:var(--char);color:var(--paper);padding:12px 20px;border-radius:2px;font-weight:600;font-size:15px;text-decoration:none;transition:background .2s}
+.btn:hover{background:var(--teak);color:var(--on-teak)}
+.btn.ghost{background:transparent;color:var(--char);box-shadow:inset 0 0 0 1px var(--char)}
+.btn.ghost:hover{background:var(--char);color:var(--paper)}
+.top .btn{padding:10px 16px}
+@media (max-width:860px){.nav{display:none}.top .btn{margin-left:auto}}
+
+/* Hero */
+.hero{padding-block:56px 0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:end}
+.hero h1{font-size:clamp(40px,5.6vw,72px);letter-spacing:-.01em}
+.hero .place{font-size:15px;color:var(--ash);margin-bottom:22px;display:flex;gap:10px;align-items:center}
+.hero .place svg{width:16px;height:16px;color:var(--teak)}
+.hero .lede{margin-top:22px;font-size:18px}
+.rate{margin-top:30px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.rate strong{font-family:var(--display);font-weight:400;font-size:34px}
+.rate span{color:var(--ash)}
+.hero-photo{position:relative;margin:0}
+.hero-photo img{width:100%;height:auto;aspect-ratio:4/3.3;object-fit:cover;border-radius:2px}
+.hero-photo figcaption{position:absolute;right:14px;bottom:14px;background:var(--linen);color:var(--char);font-size:13px;padding:6px 10px;border-radius:2px}
+@media (max-width:900px){.hero{padding-block:32px 0}.hero-grid{grid-template-columns:1fr;gap:28px}.hero-photo{order:-1}}
+
+/* Booking */
+.booking{margin-top:40px;position:relative;z-index:2}
+.bk{background:var(--linen);border:1px solid var(--line);display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.25fr);border-radius:2px}
+.bk .field{padding:16px 22px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:4px;min-width:0}
+.bk label,.bk .lab{font-size:13px;color:var(--ash);font-weight:500}
+.bk input[type=date]{font:inherit;font-size:17px;color:var(--char);background:transparent;border:0;padding:2px 0;width:100%;min-width:0}
+.stepper{display:flex;align-items:center;gap:14px}
+.stepper button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:18px;line-height:1;display:grid;place-items:center}
+.stepper button:hover:not(:disabled){border-color:var(--char)}
+.stepper button:disabled{opacity:.35;cursor:not-allowed}
+.stepper output{font-size:17px;min-width:5.5ch}
+.bk .total{padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.bk .sum{display:flex;flex-direction:column;gap:2px;min-width:0}
+.bk .sum b{font-family:var(--display);font-weight:400;font-size:24px}
+.bk .sum small{color:var(--ash);font-size:13px}
+.bk-msg{margin-top:10px;font-size:14px;color:var(--ash);min-height:1.4em}
+.bk-msg.err{color:#B3402A}
+@media (max-width:900px){
+  .bk{grid-template-columns:1fr 1fr}
+  .bk .field:nth-child(2){border-right:0}
+  .bk .field:nth-child(1),.bk .field:nth-child(2){border-bottom:1px solid var(--line)}
+  .bk .field:nth-child(3){grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line)}
+  .bk .total{grid-column:1/-1}
+}
+
+/* Facts line under booking */
+.facts{display:flex;flex-wrap:wrap;gap:10px 36px;padding-block:34px 72px;color:var(--ash);font-size:15px}
+.facts span b{color:var(--char);font-weight:600}
+
+/* Section heads */
+.sec{padding-block:88px}
+.head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:end;margin-bottom:44px}
+.head h2{font-size:clamp(32px,3.8vw,48px)}
+@media (max-width:900px){.sec{padding-block:64px}.head{grid-template-columns:1fr;gap:16px;margin-bottom:30px}}
+
+/* The window wall: property grid */
+.house{background:var(--sand)}
+.wall{background:var(--frame);padding:10px;display:grid;gap:10px;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:210px;border-radius:2px}
+.pane{position:relative;overflow:hidden;border:0;padding:0;cursor:zoom-in;background:var(--line);text-align:left;display:block;min-width:0}
+.pane img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.pane:hover img{transform:scale(1.035)}
+.pane .tag{position:absolute;left:0;bottom:0;background:var(--frame);color:var(--char);padding:8px 14px 6px 0;max-width:calc(100% - 20px)}
+.pane .tag b{font-family:var(--display);font-weight:400;font-size:18px;display:block;line-height:1.2}
+.pane .tag small{font-size:13px;color:var(--ash);display:block}
+.pane .count{position:absolute;top:10px;right:10px;background:var(--shade);color:#fff;font-size:12px;padding:3px 8px;border-radius:20px}
+.p-sun{grid-column:span 2;grid-row:span 2}
+.p-pool,.p-stair{grid-row:span 2}
+.p-living,.p-swing{grid-column:span 2}
+@media (max-width:760px){
+  .wall{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:170px;padding:7px;gap:7px}
+  .p-pool,.p-stair{grid-row:span 1}
+  .p-living,.p-swing{grid-column:span 1}
+  .p-sun{grid-row:span 2}
+  .pane .tag b{font-size:16px}
+  .pane .tag small{display:none}
+}
+.wall-note{margin-top:16px;font-size:14px;color:var(--ash)}
+
+/* Amenities */
+.amen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
+.am{display:grid;grid-template-columns:36px minmax(0,1fr);gap:16px;padding:24px 24px 24px 0;border-bottom:1px solid var(--line)}
+.am svg{width:30px;height:30px;color:var(--teak);fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.am b{font-weight:600;display:block;font-size:16px}
+.am span{color:var(--ash);font-size:15px;line-height:1.5;display:block;margin-top:2px}
+@media (max-width:900px){.amen{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.amen{grid-template-columns:1fr}}
+
+/* Stay card */
+.stay{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:start}
+.stay figure{margin:0}
+.stay figure img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:2px}
+.stay figure figcaption{font-size:13px;color:var(--ash);margin-top:10px}
+.card{border:1px solid var(--char);padding:30px;background:var(--linen)}
+.card h3{font-size:28px;margin-bottom:6px}
+.card dl{margin:22px 0 0;display:grid;grid-template-columns:auto 1fr;gap:12px 20px;font-size:15px}
+.card dt{color:var(--ash)}
+.card dd{margin:0;text-align:right}
+.card hr{border:0;border-top:1px dashed var(--line);margin:22px 0}
+.dist{margin-top:30px;display:grid;gap:14px}
+.dist div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:12px;font-size:15px}
+.dist div span:last-child{color:var(--ash)}
+@media (max-width:900px){.stay{grid-template-columns:1fr;gap:32px}}
+
+/* Guestbook */
+.book{background:var(--sand)}
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.note{background:var(--linen);padding:30px 28px 26px;display:flex;flex-direction:column;gap:22px;position:relative}
+.note:nth-child(2){transform:translateY(22px)}
+.note q{font-family:var(--display);font-size:19px;line-height:1.45;quotes:none;display:block}
+.note footer{margin-top:auto;display:flex;justify-content:space-between;align-items:end;gap:12px;border-top:1px solid var(--line);padding-top:14px;font-size:14px}
+.note footer b{font-weight:600;display:block}
+.note footer span{color:var(--ash)}
+.stamp{font-family:var(--deva);color:var(--teak);font-size:13px;border:1px solid var(--teak);padding:2px 8px;border-radius:2px;white-space:nowrap;transform:rotate(-4deg)}
+@media (max-width:900px){.notes{grid-template-columns:1fr;gap:16px}.note:nth-child(2){transform:none}}
+
+/* FAQ */
+.faq{max-width:820px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;font-size:18px;font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:14px;height:14px;margin-top:-7px;
+  background:linear-gradient(var(--char),var(--char)) center/14px 1.5px no-repeat,linear-gradient(var(--char),var(--char)) center/1.5px 14px no-repeat;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 44px 24px 0;color:var(--ash);max-width:64ch}
+.faq-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px}
+.faq-grid aside p{color:var(--ash);margin-top:16px;max-width:36ch}
+.faq-grid aside .btn{margin-top:24px}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr;gap:28px}}
+
+/* Footer with stairwell glass */
+.glass-band{height:70px;color:var(--char)}
+.glass-band svg{width:100%;height:100%;display:block}
+footer.site{background:var(--char);color:var(--paper)}
+footer.site .wrap{padding-block:56px 40px;display:grid;grid-template-columns:minmax(0,5fr) repeat(2,minmax(0,3fr));gap:40px}
+footer.site h3{font-size:30px}
+footer.site .deva{font-family:var(--deva);font-size:18px;opacity:.75;margin-top:6px}
+footer.site p,footer.site li{font-size:15px;opacity:.82}
+footer.site ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer.site .k{font-size:13px;opacity:.6;margin-bottom:10px}
+footer.site .fine{grid-column:1/-1;border-top:1px solid color-mix(in srgb,var(--paper) 20%,transparent);padding-top:22px;font-size:13px;opacity:.6;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.copy{background:none;border:1px solid color-mix(in srgb,var(--paper) 40%,transparent);color:var(--paper);font-size:12px;padding:2px 8px;border-radius:2px;cursor:pointer;margin-left:6px}
+@media (max-width:800px){footer.site .wrap{grid-template-columns:1fr 1fr}footer.site .wrap>div:first-child{grid-column:1/-1}}
+
+/* Overlays */
+.ov{position:fixed;inset:0;z-index:50;background:rgba(20,18,16,.86);display:grid;place-items:center;
+  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb{width:min(1100px,100%);display:grid;gap:14px;color:#F2EADD}
+.lb-stage{position:relative;background:#000}
+.lb-stage img{width:100%;max-height:72vh;object-fit:contain;margin:0 auto}
+.lb-bar{display:flex;justify-content:space-between;align-items:start;gap:20px;flex-wrap:wrap}
+.lb-bar h3{font-size:26px;color:#F2EADD}
+.lb-bar p{color:#CFC4B5;font-size:15px;max-width:60ch;margin-top:4px}
+.lb-ctl{display:flex;gap:8px;align-items:center}
+.lb-ctl button{background:transparent;border:1px solid rgba(242,234,221,.4);color:#F2EADD;width:40px;height:40px;border-radius:50%;cursor:pointer;display:grid;place-items:center}
+.lb-ctl button:hover{background:rgba(242,234,221,.12)}
+.lb-ctl span{font-size:13px;color:#CFC4B5;min-width:5ch;text-align:center}
+.lb-ctl svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.lb-thumbs{display:flex;gap:8px;overflow-x:auto}
+.lb-thumbs button{flex:none;width:76px;height:56px;padding:0;border:2px solid transparent;cursor:pointer;background:none;opacity:.6}
+.lb-thumbs button[aria-current="true"]{border-color:#F2EADD;opacity:1}
+.lb-thumbs img{width:100%;height:100%;object-fit:cover}
+
+.req{background:var(--paper);color:var(--char);width:min(520px,100%);padding:32px;max-height:100%;overflow:auto;border-radius:2px}
+.req h3{font-size:28px}
+.req .rows{margin:20px 0;display:grid;gap:8px;font-size:15px}
+.req .rows div{display:flex;justify-content:space-between;gap:16px}
+.req .rows div span:first-child{color:var(--ash)}
+.req .rows .t{border-top:1px solid var(--line);padding-top:10px;font-weight:600}
+.req form{display:grid;gap:14px}
+.req label{font-size:13px;color:var(--ash);display:grid;gap:4px}
+.req input,.req textarea{font:inherit;font-size:16px;color:var(--char);background:var(--linen);border:1px solid var(--line);padding:10px 12px;border-radius:2px;width:100%}
+.req textarea{min-height:76px;resize:vertical}
+.req .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.req .demo{font-size:13px;color:var(--ash);margin-top:14px}
+</style>
+<style>[hidden]{display:none!important} body{margin:0} :root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- roof truss, taken from the house's steel roof -->
+    <symbol id="truss" viewBox="0 0 34 24"><path d="M1.5 15 17 3l15.5 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><path d="M6 11.5V21M28 11.5V21M17 3v18M9.5 8.8 17 21l7.5-12.2M3 21h28" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Urja Nilayam home">
+      <svg><use href="#truss"/></svg>
+      <span><b>Urja Nilayam</b><small>ऊर्जा निलयम्</small></span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#house">The house</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#stay">Stay details</a>
+      <a href="#guestbook">Guestbook</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn" href="#book">Check dates</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="place"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 14.5s5-4.3 5-8.2A5 5 0 0 0 3 6.3c0 3.9 5 8.2 5 8.2z"/><circle cx="8" cy="6.3" r="1.8"/></svg>Karjat, Maharashtra</p>
+          <h1>Your own house in the Karjat hills</h1>
+          <p class="lede">Urja Nilayam is a three-bedroom villa with a private plunge pool, a glass-walled sunroom upstairs and a garden of banana and mango trees. The whole house is yours, for up to ten guests.</p>
+          <div class="rate"><strong class="num">₹12,000</strong><span>a night for the whole villa</span></div>
+        </div>
+        <figure class="hero-photo">
+          <img src="images/sunroom.jpg" alt="Upstairs sunroom with a wall of white-framed glass, wooden floor and evening light" width="1280" height="960" fetchpriority="high">
+          <figcaption>The sunroom, around 5 pm</figcaption>
+        </figure>
+      </div>
+
+      <div class="booking" id="book">
+        <form class="bk" id="bk" novalidate>
+          <div class="field">
+            <label for="cin">Check-in</label>
+            <input type="date" id="cin" name="cin" required>
+          </div>
+          <div class="field">
+            <label for="cout">Check-out</label>
+            <input type="date" id="cout" name="cout" required>
+          </div>
+          <div class="field">
+            <span class="lab" id="glab">Guests</span>
+            <div class="stepper" role="group" aria-labelledby="glab">
+              <button type="button" id="gminus" aria-label="Fewer guests">−</button>
+              <output id="gcount" aria-live="polite">6 guests</output>
+              <button type="button" id="gplus" aria-label="More guests">+</button>
+            </div>
+          </div>
+          <div class="total">
+            <div class="sum">
+              <small id="sumline" class="num">₹12,000 × 2 nights</small>
+              <b id="sumtotal" class="num">₹24,000</b>
+            </div>
+            <button class="btn" type="submit" id="reqbtn">Request to book</button>
+          </div>
+        </form>
+        <p class="bk-msg" id="bkmsg" aria-live="polite">Whole villa, up to 10 guests. Pay nothing now, the host confirms within a few hours.</p>
+      </div>
+
+      <div class="facts">
+        <span><b>3</b> bedrooms</span>
+        <span><b>10</b> guests</span>
+        <span><b>2</b> floors with a sunroom and swing balcony</span>
+        <span><b>1</b> private plunge pool in the garden</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec house" id="house">
+    <div class="wrap">
+      <div class="head">
+        <h2>The house, room by room</h2>
+        <p class="lede">White walls, teak-toned floors, Kashmiri embroidered cushions and a lot of glass. Tap any pane to look around that part of the house.</p>
+      </div>
+      <div class="wall" id="wall">
+        <button class="pane p-sun" data-space="sunroom"><img src="images/lounge-1.jpg" alt="Sunroom lounge with red L-shaped seating and a pallet coffee table" loading="lazy"><span class="count">3 photos</span><span class="tag"><b>Sunroom lounge</b><small>Upstairs, glass on one full side</small></span></button>
+        <button class="pane p-pool" data-space="pool"><img src="images/pool-2.jpg" alt="Round plunge pool on artificial grass under banana trees" loading="lazy"><span class="count">2 photos</span><span class="tag"><b>Plunge pool</b><small>Private, in the garden</small></span></button>
+        <button class="pane p-stair" data-space="stairwell"><img src="images/stairwell.jpg" alt="Stairwell with a stained-glass window and rope pendant lights" loading="lazy"><span class="tag"><b>Stairwell</b><small>Stained glass and rope lights</small></span></button>
+        <button class="pane" data-space="garden-bed"><img src="images/bedroom-garden-2.jpg" alt="Bedroom with two windows, a double bed and a ceiling fan" loading="lazy"><span class="count">2 photos</span><span class="tag"><b>Garden bedroom</b><small>Double bed, AC</small></span></button>
+        <button class="pane" data-space="brick-bed"><img src="images/bedroom-brick.jpg" alt="Bedroom with a pallet-wood bed, exposed brick wall and lamps" loading="lazy"><span class="tag"><b>Brick bedroom</b><small>Pallet bed, AC</small></span></button>
+        <button class="pane p-living" data-space="living"><img src="images/stairs.jpg" alt="Living room with an open steel staircase and wooden shelves" loading="lazy"><span class="count">3 photos</span><span class="tag"><b>Living room</b><small>Open steel stair, books, smart TV</small></span></button>
+        <button class="pane" data-space="window-bed"><img src="images/bedroom-window-1.jpg" alt="Bedroom with a dark headboard, white linen and two bedside lamps" loading="lazy"><span class="count">3 photos</span><span class="tag"><b>Window bedroom</b><small>Double bed, AC</small></span></button>
+        <button class="pane p-swing" data-space="swing"><img src="images/swing-balcony.jpg" alt="Wooden swing table on chains on the upper balcony, with a book open on it" loading="lazy"><span class="tag"><b>Swing balcony</b><small>Upstairs, facing the trees</small></span></button>
+        <button class="pane" data-space="outside"><img src="images/house-front.jpg" alt="Front of the villa with white steel porch, steps and potted plants" loading="lazy"><span class="count">3 photos</span><span class="tag"><b>Porch and garden</b><small>Stone path, flowering creepers</small></span></button>
+      </div>
+      <p class="wall-note">Every photo here is of Urja Nilayam as it is today.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="amenities">
+    <div class="wrap">
+      <div class="head">
+        <h2>What the house has</h2>
+        <p class="lede">The basics are covered, and a few things you will only find here. Ask us if you need something that is not on this list.</p>
+      </div>
+      <div class="amen">
+        <div class="am"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="8.5" rx="8" ry="2.6"/><path d="M4 8.5v8c0 1.4 3.6 2.6 8 2.6s8-1.2 8-2.6v-8"/><path d="M7 13.2c1 .6 2 .6 3 0s2-.6 3 0 2 .6 3 0"/></svg><div><b>Private plunge pool</b><span>About 4 ft deep, with a ladder. Only your group uses it.</span></div></div>
+        <div class="am"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18"/><path d="M12 3v18M4 9h16M4 15h16"/></svg><div><b>Glass sunroom</b><span>A wall of windows upstairs. Best light from 4 pm onwards.</span></div></div>
+        <div class="am"><svg viewBox="0 0 24 24"><path d="M3.5 3h17M7 3l.6 11M17 3l-.6 11"/><path d="M5 14h14v3H5z"/><path d="M6.5 17v3M17.5 17v3"/></svg><div><b>Swing table</b><span>Hung on chains on the balcony. Good for tea or a book.</span></div></div>
+        <div class="am"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="6" rx="1.5"/><path d="M6 8.5h12"/><path d="M8 14c0 1.6-1 2.2-1 3.8M12 14v4.2M16 14c0 1.6 1 2.2 1 3.8"/></svg><div><b>AC in all three bedrooms</b><span>Ceiling fans in the sunroom and living room too.</span></div></div>
+        <div class="am"><svg viewBox="0 0 24 24"><rect x="4" y="13" width="16" height="5.5" rx="1"/><path d="m7.5 13-2-7M16.5 13l2-7"/><path d="M8 15.8h.01M11 15.8h.01"/></svg><div><b>Wi-Fi</b><span>Fine for calls and streaming in the living room.</span></div></div>
+        <div class="am"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="11.5" rx="1"/><path d="M12 16v3.5M8 19.5h8"/></svg><div><b>Smart TV</b><span>Wall-mounted in the living room, with streaming apps.</span></div></div>
+        <div class="am"><svg viewBox="0 0 24 24"><path d="M5 19.5V6M8.5 19.5V4M12 19.5V7.5"/><path d="m14.8 7.6 3.9 11.3"/><path d="M3 19.5h18"/></svg><div><b>A shelf of books</b><span>English, Hindi and Marathi paperbacks. Take one to the swing.</span></div></div>
+        <div class="am"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8.5 8.5h.01M15.5 15.5h.01M12 12h.01M15.5 8.5h.01M8.5 15.5h.01" stroke-width="2.4"/></svg><div><b>Board games</b><span>Ludo and cards for rainy evenings.</span></div></div>
+        <div class="am"><svg viewBox="0 0 24 24"><path d="M12 21V11"/><path d="M12 11C8 11 4 8 3 3c5 0 8.5 3 9 8z"/><path d="M12 13.5c3 0 7-2 8.5-6.5-4.5 0-8 2.5-8.5 6.5z"/></svg><div><b>Garden</b><span>Banana, mango and papaya trees, string lights at night.</span></div></div>
+        <div class="am"><svg viewBox="0 0 24 24"><path d="M5.5 11h12v4.5a4.5 4.5 0 0 1-4.5 4.5h-3a4.5 4.5 0 0 1-4.5-4.5z"/><path d="M17.5 12.5h1a2 2 0 0 1 0 4h-1"/><path d="M8.5 11a3 3 0 0 1 6 0M5.5 13 3 11"/><path d="M11.5 5v1.2"/></svg><div><b>Tea tray in every bedroom</b><span>Kettle and cups, set out fresh every day.</span></div></div>
+        <div class="am"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="9" cy="9.8" r="1.7"/><circle cx="14.8" cy="9.4" r="1.7"/><circle cx="12" cy="14.6" r="2.3"/></svg><div><b>Home-cooked thali</b><span>Maharashtrian meals by our caretaker, on request.</span></div></div>
+        <div class="am"><svg viewBox="0 0 24 24"><path d="M4 20V6M20 20V6"/><path d="M4 9h16M4 14h16"/><path d="M8 9v5M12 9v5M16 9v5"/></svg><div><b>Parking inside the gate</b><span>Room for two cars and a few bikes.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="stay" style="padding-top:0">
+    <div class="wrap">
+      <div class="stay">
+        <figure>
+          <img src="images/house-side.jpg" alt="Side of the villa with a white porch railing, creepers and a stone path" loading="lazy">
+          <figcaption>The porch and side garden. The pool sits just to the left.</figcaption>
+        </figure>
+        <div>
+          <div class="card">
+            <h3>The stay</h3>
+            <p style="color:var(--ash);font-size:15px">One booking gets you the entire villa.</p>
+            <dl class="num">
+              <dt>Nightly rate</dt><dd>₹12,000</dd>
+              <dt>Guests</dt><dd>Up to 10</dd>
+              <dt>Bedrooms</dt><dd>3, all with AC</dd>
+              <dt>Check-in</dt><dd>1:00 pm</dd>
+              <dt>Check-out</dt><dd>11:00 am</dd>
+            </dl>
+            <hr>
+            <a class="btn" href="#book" style="width:100%">Pick your dates</a>
+          </div>
+          <div class="dist">
+            <div><span>Karjat railway station</span><span>about 15 min</span></div>
+            <div><span>Mumbai</span><span>about 2 hrs by road</span></div>
+            <div><span>Pune</span><span>about 2.5 hrs by road</span></div>
+            <div><span>Lonavala</span><span>about 1 hr by road</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec book" id="guestbook">
+    <div class="wrap">
+      <div class="head">
+        <h2>From the guestbook</h2>
+        <p class="lede">Every group leaves a note in the book on the living room shelf. A few of them, copied out.</p>
+      </div>
+      <div class="notes">
+        <article class="note">
+          <q>We came for the pool and ended up spending most of the evening on the swing. The sunroom at sunset is something else. Kids did not want to leave.</q>
+          <footer><div><b>Neha Kulkarni</b><span>Pune, family of 7</span></div><span class="stamp">मार्च २०२६</span></footer>
+        </article>
+        <article class="note">
+          <q>Four of us from college, two nights. Ludo tournament went till 2 am, the thali for lunch was better than any restaurant in Karjat. Very clean house.</q>
+          <footer><div><b>Rohan Mehta</b><span>Mumbai, friends' trip</span></div><span class="stamp">जुलै २०२६</span></footer>
+        </article>
+        <article class="note">
+          <q>Quiet, green and simple in the best way. Woke up to birds and tea on a tray. The caretaker helped us with everything, even a late check-out.</q>
+          <footer><div><b>Anita and Suresh Iyer</b><span>Thane, anniversary stay</span></div><span class="stamp">ऑगस्ट २०२६</span></footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="faq">
+    <div class="wrap faq-grid">
+      <aside>
+        <h2 style="font-size:clamp(32px,3.8vw,48px)">Before you book</h2>
+        <p>Answers to what guests usually ask. For anything else, message us on WhatsApp.</p>
+        <a class="btn ghost" href="#book">Check dates</a>
+      </aside>
+      <div class="faq">
+        <details open><summary>What are the check-in and check-out times?</summary><p>Check-in is from 1:00 pm and check-out is by 11:00 am. Early check-in or late check-out can usually be arranged if the house is free the day before or after.</p></details>
+        <details><summary>Is the whole villa ours, or is it shared?</summary><p>The whole villa is yours. All three bedrooms, the sunroom, the garden and the pool are only for your group.</p></details>
+        <details><summary>Can we bring more than 10 people?</summary><p>Ten is the limit for an overnight stay. Day visitors can come by if you tell us in advance, up to 4 extra people.</p></details>
+        <details><summary>Is food available?</summary><p>Our caretaker cooks Maharashtrian vegetarian and non-vegetarian thalis on request, charged per plate. You are also welcome to order in or bring your own food.</p></details>
+        <details><summary>How deep is the pool? Is it safe for children?</summary><p>It is a round plunge pool about 4 ft deep. It is not for diving. Children must be with an adult in and around the pool at all times.</p></details>
+        <details><summary>Are pets allowed?</summary><p>Well-behaved dogs are welcome with a small cleaning fee. Please keep them out of the pool and off the beds.</p></details>
+        <details><summary>What is the cancellation policy?</summary><p>Full refund up to 7 days before check-in. 50% refund between 7 and 3 days. No refund within 3 days of arrival.</p></details>
+        <details><summary>How do we get there?</summary><p>Karjat is about 2 hours from Mumbai by road. If you come by train, we can arrange a pickup from Karjat station. The exact location pin is shared after booking.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="glass-band" aria-hidden="true">
+  <svg preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 70">
+    <defs>
+      <pattern id="leaded" width="70" height="70" patternUnits="userSpaceOnUse">
+        <rect width="70" height="70" fill="var(--linen)"/>
+        <rect x="6" y="8" width="12" height="20" fill="var(--glass)" opacity=".75"/>
+        <rect x="44" y="40" width="18" height="10" fill="var(--glass)" opacity=".6"/>
+        <path d="M54 6h10v12z" fill="var(--glass)" opacity=".45"/>
+        <g fill="none" stroke="var(--char)" stroke-width="1" opacity=".55">
+          <circle cx="0" cy="0" r="30"/><circle cx="70" cy="0" r="30"/><circle cx="0" cy="70" r="30"/><circle cx="70" cy="70" r="30"/>
+          <circle cx="35" cy="35" r="22"/>
+          <path d="M6 8h12v20H6zM44 40h18v10H44zM24 52h14v12H24zM50 6h14v12H50z"/>
+        </g>
+      </pattern>
+    </defs>
+    <rect width="1200" height="70" fill="url(#leaded)"/>
+    <path d="M0 0.5h1200M0 69.5h1200" stroke="var(--char)" stroke-width="1"/>
+  </svg>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <h3>Urja Nilayam</h3>
+      <p class="deva">ऊर्जा निलयम्</p>
+      <p style="margin-top:16px;max-width:38ch">The name means home of energy. A private pool villa in Karjat, Raigad district, Maharashtra.</p>
+    </div>
+    <div>
+      <p class="k">Contact</p>
+      <ul>
+        <li>WhatsApp <span id="phone">+91 98200 00000</span><button class="copy" type="button" data-copy="+91 98200 00000">Copy</button></li>
+        <li>stay@urjanilayam.in</li>
+        <li>Karjat, Maharashtra 410201</li>
+      </ul>
+    </div>
+    <div>
+      <p class="k">On this page</p>
+      <ul>
+        <li><a href="#house">The house</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#guestbook">Guestbook</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="fine"><span>© 2026 Urja Nilayam</span><span>Demo website. Prices, reviews and contact details are sample content.</span></div>
+  </div>
+</footer>
+
+<div class="ov" id="lb" hidden role="dialog" aria-modal="true" aria-labelledby="lbtitle">
+  <div class="lb">
+    <div class="lb-bar">
+      <div><h3 id="lbtitle">Room</h3><p id="lbtext"></p></div>
+      <div class="lb-ctl">
+        <button type="button" id="lbprev" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button>
+        <span id="lbpos" class="num">1 / 1</span>
+        <button type="button" id="lbnext" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+        <button type="button" id="lbclose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+    </div>
+    <div class="lb-stage"><img id="lbimg" src="" alt=""></div>
+    <div class="lb-thumbs" id="lbthumbs"></div>
+  </div>
+</div>
+
+<div class="ov" id="rq" hidden role="dialog" aria-modal="true" aria-labelledby="rqtitle">
+  <div class="req">
+    <div id="rqform">
+      <h3 id="rqtitle">Request to book</h3>
+      <div class="rows num" id="rqrows"></div>
+      <form id="rqf" novalidate>
+        <label for="rqname">Your name<input id="rqname" name="name" autocomplete="name" required></label>
+        <label for="rqphone">Mobile number<input id="rqphone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></label>
+        <label for="rqnote">Anything we should know (optional)<textarea id="rqnote" name="note" placeholder="Arrival time, food preferences, celebrations"></textarea></label>
+        <p class="bk-msg err" id="rqerr" aria-live="polite"></p>
+        <div class="acts"><button class="btn" type="submit">Send request</button><button class="btn ghost" type="button" data-close>Back</button></div>
+      </form>
+      <p class="demo">This is a demo site. Nothing is charged and no message leaves this page.</p>
+    </div>
+    <div id="rqdone" hidden>
+      <h3>Request noted</h3>
+      <p style="margin-top:12px;color:var(--ash)" id="rqdonetext"></p>
+      <p class="demo">On the live site, this request would go to the host on WhatsApp for confirmation.</p>
+      <div class="acts" style="margin-top:20px"><button class="btn" type="button" data-close>Done</button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const RATE=12000, MAXG=10;
+  const $=id=>document.getElementById(id);
+  const inr=n=>"₹"+n.toLocaleString("en-IN");
+  const iso=d=>new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);
+  const parse=s=>{if(!s)return null;const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)};
+  const nice=s=>parse(s).toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"});
+
+  /* Booking bar, prefilled with the coming weekend */
+  const cin=$("cin"), cout=$("cout");
+  let guests=6;
+  const today=new Date(); today.setHours(0,0,0,0);
+  const sat=new Date(today); sat.setDate(today.getDate()+((6-today.getDay()+7)%7||7));
+  const mon=new Date(sat); mon.setDate(sat.getDate()+2);
+  cin.min=iso(today); cin.value=iso(sat); cout.value=iso(mon); cout.min=iso(new Date(sat.getTime()+864e5));
+
+  function nights(){const a=parse(cin.value),b=parse(cout.value);return a&&b?Math.round((b-a)/864e5):0}
+  function update(){
+    const n=nights(), msg=$("bkmsg");
+    $("gcount").textContent=guests+(guests===1?" guest":" guests");
+    $("gminus").disabled=guests<=1; $("gplus").disabled=guests>=MAXG;
+    if(cin.value){const m=parse(cin.value);m.setDate(m.getDate()+1);cout.min=iso(m)}
+    msg.classList.remove("err");
+    if(!cin.value||!cout.value){$("sumline").textContent="Choose your dates";$("sumtotal").textContent=inr(RATE)+" / night";return false}
+    if(n<1){$("sumline").textContent="Check-out must be after check-in";$("sumtotal").textContent="—";msg.textContent="Pick a check-out date at least one day after check-in.";msg.classList.add("err");return false}
+    $("sumline").textContent=inr(RATE)+" × "+n+(n===1?" night":" nights");
+    $("sumtotal").textContent=inr(RATE*n);
+    msg.textContent=nice(cin.value)+" to "+nice(cout.value)+", whole villa for "+guests+". Pay nothing now, the host confirms within a few hours.";
+    return true;
+  }
+  cin.addEventListener("change",()=>{if(nights()<1&&cin.value){const m=parse(cin.value);m.setDate(m.getDate()+1);cout.value=iso(m)}update()});
+  cout.addEventListener("change",update);
+  $("gminus").onclick=()=>{if(guests>1){guests--;update()}};
+  $("gplus").onclick=()=>{if(guests<MAXG){guests++;update()}};
+  update();
+
+  /* Overlays */
+  let lastFocus=null;
+  function open(el){lastFocus=document.activeElement;el.hidden=false;document.body.style.overflow="hidden";const f=el.querySelector("button,input");f&&f.focus()}
+  function close(el){el.hidden=true;document.body.style.overflow="";lastFocus&&lastFocus.focus()}
+
+  $("bk").addEventListener("submit",e=>{
+    e.preventDefault(); if(!update())return;
+    const n=nights();
+    $("rqrows").innerHTML=
+      `<div><span>Check-in</span><span>${nice(cin.value)}, 1:00 pm</span></div>`+
+      `<div><span>Check-out</span><span>${nice(cout.value)}, 11:00 am</span></div>`+
+      `<div><span>Guests</span><span>${guests}</span></div>`+
+      `<div><span>${inr(RATE)} × ${n} ${n===1?"night":"nights"}</span><span>${inr(RATE*n)}</span></div>`+
+      `<div class="t"><span>Total</span><span>${inr(RATE*n)}</span></div>`;
+    $("rqform").hidden=false; $("rqdone").hidden=true; $("rqerr").textContent="";
+    open($("rq"));
+  });
+  $("rqf").addEventListener("submit",e=>{
+    e.preventDefault();
+    const name=$("rqname").value.trim(), ph=$("rqphone").value.replace(/\D/g,"");
+    if(!name){$("rqerr").textContent="Add your name so the host knows who is booking.";$("rqname").focus();return}
+    if(ph.length<10){$("rqerr").textContent="Enter a 10-digit mobile number.";$("rqphone").focus();return}
+    $("rqdonetext").textContent=`Thanks, ${name.split(" ")[0]}. Your request for ${nice(cin.value)} to ${nice(cout.value)} (${guests} guests, ${inr(RATE*nights())}) is ready to send to the host.`;
+    $("rqform").hidden=true; $("rqdone").hidden=false; $("rqdone").querySelector("button").focus();
+  });
+
+  /* Lightbox for the window wall */
+  const SP={
+    sunroom:{t:"Sunroom lounge",d:"The upstairs room everyone ends up in. Red built-in seating, a pallet coffee table, and a full wall of white-framed glass that opens to the balcony.",p:["lounge-1","lounge-2","sunroom"]},
+    pool:{t:"Plunge pool",d:"A round pool about 4 ft deep, set on soft turf under the banana trees, with string lights for the evening.",p:["pool-2","pool-1"]},
+    stairwell:{t:"Stairwell",d:"A stained-glass window, two rope-hung bulbs and a framed folk painting on the way up.",p:["stairwell"]},
+    "garden-bed":{t:"Garden bedroom",d:"Two windows looking into the mango trees, a double bed, bedside lamps, ceiling fan and AC.",p:["bedroom-garden-2","bedroom-garden-1"]},
+    "brick-bed":{t:"Brick bedroom",d:"A low pallet-wood bed against an exposed brick wall, with hand-painted lamps and AC.",p:["bedroom-brick"]},
+    living:{t:"Living room",d:"An open steel staircase with wooden treads, shelves of books and plants, a smart TV and the board games.",p:["stairs","living-stairs","ludo"]},
+    "window-bed":{t:"Window bedroom",d:"A double bed with a dark headboard and two windows, AC, and a reading corner with a teak sofa.",p:["bedroom-window-1","bedroom-window-2","sitting-nook"]},
+    swing:{t:"Swing balcony",d:"A heavy wooden swing table hung on chains, on the balcony outside the sunroom. Looks out over the gardens next door.",p:["swing-balcony"]},
+    outside:{t:"Porch and garden",d:"White steel porch, stone steps, a paved path through the grass and a lot of potted plants.",p:["house-front","house-side","house-up"]}
+  };
+  let cur=null, idx=0;
+  function show(i){
+    const ps=SP[cur].p; idx=(i+ps.length)%ps.length;
+    $("lbimg").src="images/"+ps[idx]+".jpg"; $("lbimg").alt=SP[cur].t+", photo "+(idx+1);
+    $("lbpos").textContent=(idx+1)+" / "+ps.length;
+    [...$("lbthumbs").children].forEach((b,j)=>b.setAttribute("aria-current",j===idx));
+    const one=ps.length<2; $("lbprev").hidden=one; $("lbnext").hidden=one; $("lbthumbs").hidden=one;
+  }
+  document.querySelectorAll(".pane").forEach(p=>p.addEventListener("click",()=>{
+    cur=p.dataset.space; const s=SP[cur];
+    $("lbtitle").textContent=s.t; $("lbtext").textContent=s.d;
+    $("lbthumbs").innerHTML=s.p.map((f,j)=>`<button type="button" aria-label="Photo ${j+1}"><img src="images/${f}.jpg" alt=""></button>`).join("");
+    [...$("lbthumbs").children].forEach((b,j)=>b.onclick=()=>show(j));
+    show(0); open($("lb"));
+  }));
+  $("lbprev").onclick=()=>show(idx-1); $("lbnext").onclick=()=>show(idx+1);
+  $("lbclose").onclick=()=>close($("lb"));
+  document.querySelectorAll("[data-close]").forEach(b=>b.onclick=()=>close($("rq")));
+  document.querySelectorAll(".ov").forEach(o=>o.addEventListener("click",e=>{if(e.target===o)close(o)}));
+  document.addEventListener("keydown",e=>{
+    if(!$("lb").hidden){if(e.key==="Escape")close($("lb"));if(e.key==="ArrowLeft")show(idx-1);if(e.key==="ArrowRight")show(idx+1)}
+    else if(!$("rq").hidden&&e.key==="Escape")close($("rq"));
+  });
+
+  /* Copy phone */
+  document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>{
+    const v=b.dataset.copy;
+    const done=()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1600)};
+    try{navigator.clipboard.writeText(v).then(done,()=>sel())}catch(_){sel()}
+    function sel(){const r=document.createRange();r.selectNodeContents($("phone"));const s=getSelection();s.removeAllRanges();s.addRange(r)}
+  }));
+})();
+</script>
+
+</body>
+</html>
