@@ -3,64 +3,61 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
 <title>Urja Nilayam</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Urja Nilayam, a three-bedroom private pool villa in Karjat, Maharashtra. Sleeps ten. ₹12,000 a night for the whole house.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Hanken+Grotesk:wght@400;500;600&family=Tiro+Devanagari+Marathi&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Hanken+Grotesk:wght@400;500;600&family=Tiro+Devanagari+Marathi&display=swap">
 <style>
 /* Layout: the house is read through its own window wall. Spaces sit in a framed pane grid (white mullions),
    everything else is a quiet single column with a left-aligned rhythm. */
 :root{
-  --paper:#F2EADD;      /* cream, the walls */
-  --sand:#E3D6C2;       /* beige, the band behind the window wall */
-  --linen:#FBF7F0;      /* window-frame white */
-  --frame:#FBF7F0;      /* mullions */
+  --paper:#FBF8F2;      /* warm white, the walls */
+  --sand:#EFE6D8;       /* beige, the band behind the window wall */
+  --linen:#FFFFFF;      /* window-frame white */
+  --frame:#FFFFFF;      /* mullions */
   --char:#2C2926;       /* charcoal, text and steel */
   --ash:#6F665D;        /* muted text */
-  --line:#D3C4AE;       /* hairlines */
+  --line:#E0D3BF;       /* hairlines */
   --teak:#86532F;       /* floorboards and stair treads, the one accent */
   --glass:#2C98B6;      /* stairwell glass, only inside the pattern */
   --on-teak:#FBF7F0;
   --shade:rgba(44,41,38,.55);
-  --display:"Young Serif", Georgia, "Times New Roman", serif;
-  --body:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --display:"Newsreader", Georgia, "Times New Roman", serif;
+  --body:"Newsreader", Georgia, "Times New Roman", serif;
+  --ui:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme:light;
   --deva:"Tiro Devanagari Marathi", "Noto Serif Devanagari", serif;
   --gutter-l:max(16px, env(safe-area-inset-left, 0px));
   --gutter-r:max(16px, env(safe-area-inset-right, 0px));
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --paper:#1D1B19; --sand:#272320; --linen:#2A2622; --frame:#4A433C; --char:#EEE5D7; --ash:#ADA295;
-    --line:#3B3631; --teak:#CF9A70; --glass:#5BB8D1; --on-teak:#1D1B19; --shade:rgba(0,0,0,.6); color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#1D1B19; --sand:#272320; --linen:#2A2622; --frame:#4A433C; --char:#EEE5D7; --ash:#ADA295;
-  --line:#3B3631; --teak:#CF9A70; --glass:#5BB8D1; --on-teak:#1D1B19; --shade:rgba(0,0,0,.6); color-scheme:dark;
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
-body{background:var(--paper);color:var(--char);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{background:var(--paper);color:var(--char);font-family:var(--body);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--teak);outline-offset:3px}
-h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;text-wrap:balance;margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:400;font-optical-sizing:auto;letter-spacing:-.012em;line-height:1.1;text-wrap:balance;margin:0}
 p{margin:0}
 .wrap{max-width:1180px;margin:0 auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
 .lede{color:var(--ash);max-width:58ch}
 .num{font-variant-numeric:tabular-nums}
+
+/* Sans only where people operate or scan */
+.nav,.btn,.bk,.bk-msg,.facts,.count,.req label,.req input,.req textarea,.req .rows,.copy,.k,.lb-ctl span,.hero .place,figcaption,.dist,.card dl,.wall-note,.note footer,.pane .tag small,.am b{font-family:var(--ui)}
+.bk .sum b{font-family:var(--display)}
 
 /* Header */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;gap:28px;padding-block:14px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .brand svg{width:34px;height:24px;color:var(--teak);flex:none}
-.brand b{font-family:var(--display);font-weight:400;font-size:21px;letter-spacing:.01em;display:block;line-height:1}
+.brand b{font-family:var(--display);font-weight:500;font-size:22px;letter-spacing:.01em;display:block;line-height:1}
 .brand small{font-family:var(--deva);font-size:13px;color:var(--ash);display:block;line-height:1.3;margin-top:3px}
 .nav{display:flex;gap:24px;margin-left:auto;font-size:15px}
 .nav a{text-decoration:none;color:var(--ash)}
@@ -75,12 +72,12 @@ p{margin:0}
 /* Hero */
 .hero{padding-block:56px 0}
 .hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:end}
-.hero h1{font-size:clamp(40px,5.6vw,72px);letter-spacing:-.01em}
+.hero h1{font-size:clamp(42px,6vw,78px);font-weight:340;letter-spacing:-.022em;line-height:1.02}
 .hero .place{font-size:15px;color:var(--ash);margin-bottom:22px;display:flex;gap:10px;align-items:center}
 .hero .place svg{width:16px;height:16px;color:var(--teak)}
 .hero .lede{margin-top:22px;font-size:18px}
 .rate{margin-top:30px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.rate strong{font-family:var(--display);font-weight:400;font-size:34px}
+.rate strong{font-family:var(--display);font-weight:400;font-size:38px}
 .rate span{color:var(--ash)}
 .hero-photo{position:relative;margin:0}
 .hero-photo img{width:100%;height:auto;aspect-ratio:4/3.3;object-fit:cover;border-radius:2px}
@@ -175,7 +172,7 @@ p{margin:0}
 .notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
 .note{background:var(--linen);padding:30px 28px 26px;display:flex;flex-direction:column;gap:22px;position:relative}
 .note:nth-child(2){transform:translateY(22px)}
-.note q{font-family:var(--display);font-size:19px;line-height:1.45;quotes:none;display:block}
+.note q{font-family:var(--display);font-style:italic;font-size:20px;line-height:1.45;quotes:none;display:block}
 .note footer{margin-top:auto;display:flex;justify-content:space-between;align-items:end;gap:12px;border-top:1px solid var(--line);padding-top:14px;font-size:14px}
 .note footer b{font-weight:600;display:block}
 .note footer span{color:var(--ash)}
@@ -200,15 +197,15 @@ p{margin:0}
 /* Footer with stairwell glass */
 .glass-band{height:70px;color:var(--char)}
 .glass-band svg{width:100%;height:100%;display:block}
-footer.site{background:var(--char);color:var(--paper)}
+footer.site{background:var(--sand);color:var(--char)}
 footer.site .wrap{padding-block:56px 40px;display:grid;grid-template-columns:minmax(0,5fr) repeat(2,minmax(0,3fr));gap:40px}
 footer.site h3{font-size:30px}
 footer.site .deva{font-family:var(--deva);font-size:18px;opacity:.75;margin-top:6px}
 footer.site p,footer.site li{font-size:15px;opacity:.82}
 footer.site ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 footer.site .k{font-size:13px;opacity:.6;margin-bottom:10px}
-footer.site .fine{grid-column:1/-1;border-top:1px solid color-mix(in srgb,var(--paper) 20%,transparent);padding-top:22px;font-size:13px;opacity:.6;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.copy{background:none;border:1px solid color-mix(in srgb,var(--paper) 40%,transparent);color:var(--paper);font-size:12px;padding:2px 8px;border-radius:2px;cursor:pointer;margin-left:6px}
+footer.site .fine{grid-column:1/-1;border-top:1px solid var(--line);padding-top:22px;font-size:13px;opacity:.6;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.copy{background:none;border:1px solid var(--line);color:var(--char);font-size:12px;padding:2px 8px;border-radius:2px;cursor:pointer;margin-left:6px}
 @media (max-width:800px){footer.site .wrap{grid-template-columns:1fr 1fr}footer.site .wrap>div:first-child{grid-column:1/-1}}
 
 /* Overlays */
